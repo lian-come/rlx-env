@@ -1,7 +1,17 @@
 # RL-X / RCSSServerMJ / Apollo 运行环境镜像
 
-这是一个**只包含运行环境**的 Docker 镜像：里面没有 RL-X、RCSSServerMJ、Apollo 的源码，
-源码由你自己下载后挂载进容器。镜像里已经装好训练、仿真、模型转换需要的全部依赖。
+👉 **下载地址：https://github.com/lian-come/rlx-env/releases/tag/v1.0.0**
+
+> ⚠️ 说明：这是**仅包含运行依赖的 Docker 镜像**，内部不包含 RL-X、RCSSServerMJ、Apollo 源码；
+> 源码需要自行下载，在启动容器时挂载进去。镜像预置了训练、仿真、模型转换所需全部依赖。
+
+## 导入步骤
+1. 下载全部分卷包 + SHA256SUMS.parts
+2. 合并、校验、加载镜像
+```bash
+cat rlx_env.tar.gz.part* > rlx_env.tar.gz
+sha256sum -c SHA256SUMS.parts
+docker load -i rlx_env.tar.gz
 
 | 用途 | 镜像内提供 |
 | --- | --- |
